@@ -1,0 +1,19 @@
+public class MyClass{
+    public static void main(String[] args){
+        
+        
+        int count = -1; //초기값
+        
+        count += 1;
+        System.out.println(count); //증가 후 처리
+        
+        int n = 0;
+        //개수, 횟수 -> 계수한다
+        n += 1; // n=n+1
+        System.out.println(n);
+        n -= 1; // n=n-1
+        System.out.println(n);
+        
+    }
+    
+}
