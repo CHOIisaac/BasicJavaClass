@@ -1,0 +1,17 @@
+public class MyClass{
+    public static void main(String[] args){
+      //논리연산자-> 관계식 여러 개
+      int min = 1;
+      int max = 10;
+      int R = 10;
+      System.out.println();
+      boolean con1 = R <= max;
+      boolean con2 = R >= min;
+      //합집합 -> OR, 교집합-> AND
+      System.out.println(con1 && con2);
+      System.out.println(!(con1 && con2));
+      System.out.println(con1 || con2);
+        
+    }
+    
+}
