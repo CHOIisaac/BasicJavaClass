@@ -1,0 +1,30 @@
+
+public class MyClass {
+    public static void main(String args[]) {
+        //변환표, 매핑(mapping)
+        //입력되는 값이 있을 때 그 값을 특정 규칙에 따라 변환한 다음에 변환값을 출력
+        int num = 6;
+        int score = 90; //0~100
+        //90 이상이면 A, 70~89면 B, 50~69 C, 나머진 F
+        String wday = ""; //빈 문자열 --> 화면출력
+        switch(score /10){ //switch문은 정수만 사용
+            //값에 따라서 실행할 부분 선택 - 시작하는 부분
+            //case 옆에는 값만 쓸 수 있음
+            case 10: 
+            case 9:
+                wday = "A";
+                break; // 반복문 안에서만 사용 가능
+            case 8:
+            case 7:
+                wday = "B";
+                break; // 반복문 안에서만 사용 가능
+            case 6:
+            case 5:
+                wday = "C";
+                break; // 반복문 안에서만 사용 가능
+            default:
+                wday = "F";
+        }    
+        System.out.println(wday);
+    }
+}
