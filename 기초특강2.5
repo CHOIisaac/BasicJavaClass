@@ -1,0 +1,26 @@
+
+public class MyClass {
+    public static void main(String args[]) {
+        
+        // 1. 3자리 정수 : 각 자리의 합이 짝수인 것들을 출력
+    for(int i = 0; i< 10; i++){
+        int num = 345; // 3+4+5
+        //찢어서 확인하기
+        int temp = num;
+        int sum = 0;
+        for(;temp > 0; temp/=10) {//한 자리씩 내려온다, 일의자리를 뽑는다
+        int d3 = temp%10;
+            sum+=d3;        
+        }
+        
+        if(sum % 2 == 0){
+            System.out.println(num + "->" + sum);
+            
+        }else{
+            System.out.println(num + "??" );
+            
+        }
+    
+    }          
+    }
+}
