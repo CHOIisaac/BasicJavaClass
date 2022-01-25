@@ -1,0 +1,25 @@
+
+public class MyClass {
+    public static void main(String args[]) {
+       // 3자리 정수 : 각 자리 값이 크기 순으로 연속하는지 판단
+        int num = 345;
+        int d1 = num / 100;
+        int d2 = num / 10 % 10;
+        int d3 = num % 10;
+        
+        if((d1+1 ==d2) && (d2+1 ==d3) ) {
+            System.out.println(num+"연속");
+        }else{
+            System.out.println(num+"비연속");
+            
+        }
+    
+        
+    }
+}
+        
+        
+        
+        
+        
+  
