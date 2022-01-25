@@ -1,0 +1,40 @@
+**임의의 실수값을 받아 10~45의 정수값으로 변환**
+1.
+
+public class MyClass {
+public static void main(String args[]) {
+//1. 데이터들이 필요, 사용되는가?
+//2. 데이터들의 특성, 범위를 파악
+//3. 계산?
+//4. 판단?    
+
+		//임의의 실수 값을 받는다.
+    double ran = Math.random();
+    System.out.println(ran); //변수의 값을 출력
+    //정수로 변환하기
+    int num = (int)(ran*100000); //복사해라 자료형이 다르다. 형변환
+    System.out.println(num);
+    //자동 형변환 반올림, 반내림
+    num %= 36; //0~35 : 최대값 한정
+    num += 10; //10~45 : 최소값 한정
+    System.out.println(num);
+
+     2.
+	  //임의의 실수 값을 받는다.
+    double ran = Math.random();
+    System.out.println(ran); //변수의 값을 출력
+    //정수로 변환하기
+    int min = 10;
+    int max = 50;
+    //길이 또는 개수로 접근
+    int num = (int)(ran*100000 % (max-min+1) + min);
+    //복사해라 자료형이 다르다. 형변환
+    //자동 형변환 반올림, 반내림
+    // num %= 36; //0~35 : 최대값 한정
+    // num += 10; //10~45 : 최소값 한정
+    System.out.println(num);
+
+    
+
+      }
+  }
