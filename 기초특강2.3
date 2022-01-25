@@ -1,0 +1,35 @@
+//1~25까지 연속하는 정수들을 출력
+public class MyClass {
+    public static void main(String args[]) {
+        
+        
+        //1~25 연속 정수 출력 - 1행당 5개씩 출력
+        int count = 0; //각 행에서 출력한 개수
+        for(int i = 1; i <= 25; i++){
+            System.out.print(i + " ");
+            count += 1;
+            if(count % 5 ==0) {
+                System.out.println();
+                // count = 0; //5가 되기 위해 0으로 초기화
+            }
+        }
+        
+        //5행5열 출력형태를 먼저 정함
+        // 중괄호 구간 살피기
+        // i 번 당 k 번 반복 실행
+        int num =1;
+        for(int i=0; i<5; i++){
+            
+            for(int k=0; k<5; k++){
+                //25번 반복
+                // System.out.print(i*5 + k );
+                System.out.print(num  );
+                num += 1;
+            }
+            
+            //5번 반복
+            System.out.println();
+        }
+        
+    }
+}
