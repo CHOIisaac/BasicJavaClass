@@ -1,0 +1,19 @@
+public class MyClass {
+    public static void main(String args[]) {
+        //배열 선언 : 정적, 명시적 배열
+        int[] arr = new int[10];
+        System.out.println(arr);
+        int idx =0; // idx번호는 저장할 번호, 저장한 개수
+        // 추가하기
+        arr[idx]=10;
+        idx+=1;
+        arr[idx]=20;
+        idx+=1;
+        // 현재 저장된 것만 출력하기
+        for(int i = 0; i<idx; i++){
+        System.out.println(arr[i]); //int변수명
+        
+        }
+
+    }
+}
