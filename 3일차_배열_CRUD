@@ -1,0 +1,114 @@
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) {
+         // 키보드 입력 처리 - 키보드와 연결
+        Scanner scanner = new Scanner(System.in);
+        
+        
+        //배열 선언 : 정적, 명시적 배열
+        int[] arr = new int[10];
+
+        //Create Read Update Delete - CRUD
+        int loop = 10;
+        int idx = 0; //매번 새로 생성할 변수냐 확인
+        //지역성 : 변수의 값이 유지되나? 매번 새로 생성되나?
+        while(loop>0){
+            loop-=1;
+            System.out.println("1.추가, 2.삭제, 3.삽입, 4.수정, 5.검색");
+            String s = scanner.nextLine();
+            
+            if(s.equals("1")){
+                // 값을 추가하기 : 번호을 알아야 하고 저장할 값 넣기 -> 중복 확인 여부
+                if(idx < arr.length){
+                    System.out.println("저장할 값을 입력하세요.");
+                    String ss = scanner.nextLine();
+                    int value = Integer.parseInt(ss); //숫자열 -> 정수
+                    arr[idx] = value;
+                    idx += 1; // 1이됨
+                }else{
+                    System.out.println("array full");
+                }
+            }
+            
+            if(s.equals("2")){
+                // 값을 삭제하기 : 번호, 빈 요소 처리 연속상태
+                System.out.println("삭제할 요소번호 입력하세요.");
+                String ss = scanner.nextLine();
+                int delete = Integer.parseInt(ss); //숫자열 -> 정수
+                // 인접요소로 당겨 채운다...
+                for(int i = delete; i< arr.length-1; i++){
+                    arr[i] = arr[i+1];
+                }
+                //개수가 줄었음. 마지막 한 칸이 빈다
+                idx -= 1;
+            }
+            
+            if(s.equals("3")){
+                // 값을 삽입하기 : 번호, 밀기, 당기기 . 
+                if(idx < arr.length){ //최소한 한 칸을 검사. 길이 체크
+                    System.out.println("삽입할 요소번호를 입력하세요.");
+                    String ss = scanner.nextLine();
+                    int insert = Integer.parseInt(ss); //숫자열 -> 정수
+                    
+                    System.out.println("저장할 값을 입력하세요.");
+                    ss = scanner.nextLine();
+                    int value = Integer.parseInt(ss); //숫자열 -> 정수
+
+                    for(int i = idx; i > insert; i--){
+                        arr[i] = arr[i-1];
+                        //[9] ------> [insert]
+                }
+                arr[insert] = value;
+                idx += 1;
+                }
+            }
+            
+            if(s.equals("4")){
+                // 값을 수정하기 : 번호, 저장할 값 -> 현재 데이터가 있어야 함
+                System.out.println("수정할 요소번호를 입력하세요.");
+                String ss = scanner.nextLine();
+                int edit = Integer.parseInt(ss); //숫자열 -> 정수
+                    
+                System.out.println("저장할 값을 입력하세요.");
+                ss = scanner.nextLine();
+                int value = Integer.parseInt(ss); //숫자열 -> 정수
+                
+                if(edit < idx){
+                    // 데이터를 바꾼다. 덮어쓴다
+                    arr[edit] = value;
+                }
+            }
+            
+            if(s.equals("5")){
+                // 검색하기-1 -> 값을 주고 요소번호를 찾는다. 순차검색
+                System.out.println("찾을 값을 입력하세요.");
+                String ss = scanner.nextLine();
+                int key = Integer.parseInt(ss); //숫자열 -> 정수
+                
+                for(int i = 0; i < idx; i++){ //실제 데이터 개수만 검색 idx
+                    if(key == arr[i]){
+                    System.out.print(i+"번 요소");
+                    //중복없음 : 1개만 찾으면 된다. 첫 번째 즉 오래된 것을 찾음
+                    break;
+                    }
+                }    
+                System.out.print("\n");
+            }
+            
+            // {
+            //     // 검색하기-2 -> 요소번호를 주고 값을 꺼낸다.
+            //      int no = 2; // 찾을 요소 번호
+            //      int result = arr[no];
+            //     System.out.print(result + "\n");
+            // }
+            
+            {
+                // 목록보기 -> 저장된 값만 출력  
+                for(int i = 0; i < arr.length; i++){
+                    System.out.print(arr[i]+ " ");
+                }
+                System.out.print("\n");
+            }
+        }//while
+    }//main
+}//class
