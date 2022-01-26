@@ -1,0 +1,34 @@
+public class MyClass {
+    public static void main(String args[]) {
+        //배열 [ ] - 요소번호로 제어한다.... 길이를 확인하자
+        //기능 : 수정, 삭제할 때 <-- 검색 선행해야 함
+        //검색 : 결과는 -> 검색된 것이 있다, 없다 2가지. 있다면 1개여야한다. 여러 개인 경우 
+        // 추가, 삭제, 삽입은 서로 관계가 있다. 각자 독립적이지 않음 연관성이 있다
+     
+       
+        //주차장 안에 주차면이 10 대 주차 가능
+        int[] parking =new int[10];
+        int count;
+        int max;
+        for(int i = 0; i<parking.length; i++){
+            System.out.println(parking[i]);
+            //0: 빈자리, 1: 주차됨
+        }
+        int result = -1;
+        for(int i = 0; i<parking.length; i++){
+            if(parking[i]==0){
+                parking[i] =1;
+                result = i; //요소번호 저장하고 있다. 직역 x
+                break;
+            }
+            
+        }
+        if(result != -1){
+            //의역하기 : 현실의 상활을 표현하고 있음
+        System.out.println("주차했음");
+        }else{
+            System.out.println("주차못했음");
+        }
+
+    }
+}
