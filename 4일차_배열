@@ -1,0 +1,26 @@
+public class MyClass {
+    // 작게 여러 개 만들어서 조립한다
+    public static void main(String args[]) { 
+        
+        for(int i = 0; i < 3; i++){
+            printMatrics(5, 8); // (행개수,열개수) <-- 열개수 ==행길이
+            System.out.println("---------------");
+        }
+    }
+    
+    //n행n열의 2차구조를 출력하는 메서드
+    public static void printMatrics(int row, int col){
+        for(int i = 0; i < row; i++){
+            printLine(col);
+        }
+    }
+    
+    //1행을 출력하는 메서드
+    public static void printLine(int length){
+        for(int i = 0; i < length; i++){
+            System.out.print('O'+" ");
+        }
+        System.out.println();
+    }
+    
+}
