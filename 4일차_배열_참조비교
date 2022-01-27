@@ -1,0 +1,69 @@
+    
+public class MyClass {
+    
+    public static void main(String args[]){
+        int[] a = new int[]{1,2,3,4,5};
+        int[] b = new int[]{1,2,3,4,5};
+        // 두 배열의 모든 요소들이 같은지 확인
+        if(a==b){
+            System.out.println("equal");
+        }else{
+            if(a.length == b.length){
+                String rs = "==";
+                for(int i = 0; i < a.length; i++){
+                    if(a[i]!=b[i]){
+                        rs = "!=";
+                        break;
+                    }
+                }
+                System.out.println(a+rs+b);
+            }else{
+                System.out.println("not equal1");
+            }
+        }
+        
+        
+    }
+    
+    public static void main2(String args[]){
+        String s1 = new String("james"); // new는 heap 영역에 생성, 식별값을 반환
+        String s2 =  new String("james");
+        System.out.println(s1+", "+s2);
+        
+        int a = 10;
+        int b = 20;
+        
+        if(s1.equals(s2)){
+            // 값이 같은지 비교
+            // 문자열 안에 각각 글자들이 모두 같아야 함
+            System.out.println("equal");
+        }else{
+            System.out.println("not equal");
+            
+        }
+        // 문자열은 같지만 식별값-위치은 다르다
+        if(s1==s2){
+            // 식별값이 같은지 확인
+            System.out.println("equal");
+        }else{
+            System.out.println("not equal");
+        }
+        
+    }
+    public static void main1(String args[]) {
+        //참조형은 주소로 표현한다.
+        Integer num = 10;
+        int n = 20;
+        // OOP --> 기본이지만 어려움
+        System.out.println(num.hashCode());
+        String str = "James";
+        System.out.println(str.hashCode()); //식별값
+        str = "Dean";
+        System.out.println(str.hashCode()); //식별값
+        // 불변성 -> "Dean" - new "DEan" 변경한 것이 아니라 새로 만든 것
+                
+
+    }
+
+
+}
