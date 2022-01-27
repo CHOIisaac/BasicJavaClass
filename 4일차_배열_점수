@@ -1,0 +1,57 @@
+public class MyClass {
+    public static void main(String args[]) { 
+        // 함수 scope, 지역성
+        int[] score = new int[]{
+            10,20,40,50,
+            100,30,40,60,
+            30,2,20,50,
+            80,200,55,250,
+            1,20,44,150
+            
+        }; 
+        // 배열을 전달해서 출력하게 했음. 왜 전달을 하나?
+        for(int i = 0; i < 5; i++){
+            // 모든 학생들의 점수를 전달하고 있다
+            // 1명만 준다
+            int[] std = new int[4];
+            // 원본배열명, 원복시작번호, 사본배열명, 사본시작번호, 복사개수
+            System.arraycopy(score,i*4,std,0,4);
+            score[i*4+3] = sumStudent(std);
+            viewStudent(/*학생번호*/ i, std);
+        // System.out.println(i);
+        }
+        // score배열을 모두 출력한다.
+        int kor=0, eng=0, math=0;
+        for(int sid=0; sid<5; sid++){
+            // 학생 1명당 점수 4개씩 출력
+            for(int jid = 0; jid<4; jid++){
+                System.out.print(score[sid*4+jid]+ ", ");
+            }
+                kor+=score[sid*4+0]; //sid번 학생의 [0]
+                eng+=score[sid*4+1];
+                math+=score[sid*4+2];
+            
+            System.out.println();
+        }
+            System.out.println("\n" + kor+", " + eng+", " + math);
+    }
+    
+    // 지역성 주의, 결과가 main의 score에 반영이 되어야 함
+    public static int sumStudent(int[] score){
+        // 0 + 1 + 2번의 요소 -> 3번에 넣기
+        score[3] = score[0] + score[1] + score[2];
+        return score[3];
+    }
+    
+    public static void viewStudent(int stdNo, int[] score){
+        System.out.print("["+stdNo+"]"+"\t");
+        for(int i = 0; i < 4; i++){
+            //1차 배열을 2차 배열로 이해한다[stdNo][i]]
+            System.out.print( score[i]  + "\t");
+        }
+        System.out.println();
+    }
+    
+    
+    
+}
